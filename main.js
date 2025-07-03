@@ -207,7 +207,7 @@ class MazeGame {
         this.gameWon = true;
         const victory = document.createElement('div');
         victory.className = 'victory';
-        victory.innerHTML = 'ПОБЕДА!<br><small>Нажми "Новый лабиринт"</small>';
+        victory.innerHTML = 'ПЕРЕМОГА!<br><small>Натисни "Новий Лабіринт"</small>';
         document.body.appendChild(victory);
     }
 
