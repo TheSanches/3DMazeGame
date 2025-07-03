@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#gameContainer {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    perspective: 1000px;
+}
+
+#maze {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.wall {
+    position: absolute;
+    background: linear-gradient(45deg, #444, #666);
+    border: 1px solid #333;
+}
+
+.floor {
+    position: absolute;
+    background: #222;
+    border: 1px solid #333;
+}
+
+.player {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ff4444, #cc0000);
+    border-radius: 50%;
+    z-index: 1000;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 20px #ff4444;
+}
+
+.goal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #44ff44, #00cc00);
+    border-radius: 50%;
+    z-index: 999;
+    animation: pulse 1s infinite alternate;
+    box-shadow: 0 0 20px #44ff44;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+#controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    z-index: 2000;
+    font-size: 14px;
+}
+
+#gameInfo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    z-index: 2000;
+    text-align: right;
+}
+
+.victory {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #44ff44;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 3000;
+    animation: victory 2s infinite;
+}
+
+@keyframes victory {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+#resetBtn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+#resetBtn:hover {
+    background: #666;
+}
