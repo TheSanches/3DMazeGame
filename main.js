@@ -241,7 +241,7 @@ class MazeGame {
         setInterval(() => {
             if (!this.gameWon) {
                 const elapsed = Math.floor((Date.now() - this.startTime) / 1000);
-                document.getElementById('timer').textContent = `Время: ${elapsed}с`;
+                document.getElementById('timer').textContent = `Час: ${elapsed}с`;
             }
         }, 1000);
     }
